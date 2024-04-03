@@ -1,0 +1,256 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ul, ol{
+    list-style: none;
+}
+img{
+    width: 100%;
+}
+/* layout */
+
+
+
+/* style */
+.flex{
+    display: flex;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.chat-header{
+    height: 70px;
+    background-color: #EAEAEA;
+    padding: 7px;
+    width: 100%;
+    border-left: 1px solid #B4B4B4;
+}
+.chat-header img, .profile-preview img, .my-profile-preview img{
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50px;
+}
+.chat-header .row{
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    
+}
+.profile-name{
+    font-weight: 600; 
+    font-size: 15px;
+}
+.last-access{
+    color: #808789;
+    font-size: 13px;
+}
+.message-section{
+    background-image: url(../img/mine.jpg);
+    max-width: calc(100% - 15px);
+    height: calc(100vh - 140px);
+    padding: 20px;
+}
+
+.message-section .col-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 3px;
+}
+.message-sent-section{
+    display: flex;
+    justify-content: flex-end;
+}
+.message-arrive-section{
+    padding-top: 15px;
+}
+.message-sent, .message-arrive{
+    width: 70%;
+    font-size: 13px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #D5FABA;
+}
+.hour-text{
+    font-size: 10px;
+}
+.write-message-section{
+    background-color: #EAEAEA;
+    height: 70px;
+    padding: 10px;
+}
+.search-bar{
+    padding: 10px;
+    background-color: #EAEAEA;
+    position: relative;
+}
+.search-bar .write-text i {
+	position: absolute;
+	left: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #b1b1b1;
+}
+.search-bar .write-text input:focus-visible {
+	padding-left: 15px;
+}
+
+.search-bar .write-text input {
+    width: 350px;
+	height: 34px;
+	background-color: white;
+	border: 1px solid darkgray;
+	padding-left: 60px;
+	transition: linear 100ms;
+}
+.write-message-bar{
+    display: block;
+    width: 100%;
+    padding: 5px;
+}
+.write-message-bar .write-text input{
+    width: 100%;
+    height: 40px;
+	background-color: white;
+	border: 1px solid darkgray;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.big-icon{
+    font-size: 25px;
+    padding: 8px;
+    color: #B4B4B4;
+}
+.write-message-section .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.my-profile-preview{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+hr{
+    border: 0;
+    border-top: 1px solid #CED0D2;
+}
+.profile-description{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 10px;
+}
+.ring-slash-icon{
+    background-color: white;
+    border-radius: 50px;
+    width: 50px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.receive-notification{
+    padding: 10px;
+}
+.ring-slash-icon-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+}
+.side-bar .profile-preview .profile-description .message-arrive-hour{
+    align-self: flex-start;
+}
+.profile-scroll{
+    height: calc(95vh - 194px);
+    overflow: auto;
+}
+/* display none */
+.icon-header, .icon-write-message-section, .profile-description, .side-bar,
+.side-bar .big-icon, .receive-notification, .search-bar, .write-text input:focus-visible + i {
+    display: none;
+}
+
+/* col */
+.col-11{
+    width: calc(11 * 100 / 12);
+}
+.col-1{
+    width: calc(1 * 100 / 12);
+}
+/* background color */
+.bg-green{
+    background-color: #D5FABA;
+}
+.bg-white{
+    background-color: white;
+}
+.bg-lightgray{
+    background-color: #EAEAEA;
+}
+.bg-cyan{
+    background-color: #A6D7F9;
+}
+/* color */
+.lightgray{
+    color: #C7CACA;
+}
+.darkgray{
+    color: #5B7384;
+}
+.cyan{
+    color: #A6D7F9;
+}
+
+@media (min-width:500px){
+    .side-bar, .icon-write-message-section, .icon-header {
+        display: flex;
+    }
+    .profile-photo{
+        padding: 7px 15px;
+    }
+
+}
+@media (min-width:980px){
+    .profile-preview{ 
+        width: 370px;
+        height: 70px;
+    }
+    .side-bar .big-icon{
+        display: inline;
+    }
+    .profile-description, .receive-notification, .search-bar{
+        display: flex;
+    }
+    .message-section{
+        height: calc(95vh - 140px);
+    }
+    .main-content{
+        width: 80%;
+        margin: 2.5vh auto; 
+    }
+    body{
+        background: linear-gradient(
+          to bottom,
+          #4D9288 0%,
+          #4D9288 15%,
+          #DCDCD3 15%,
+          #DCDCD3 100%
+        );
+    }
+    
+}
