@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    
+
     <main id="app">
         <div class="row main-content">
             <!-- side bar-->
@@ -48,33 +48,29 @@
                     <!-- search profile bar -->
                     <div class="search-bar">
                         <div class="write-text">
-                            <input
-							type="text"
-							name="search"
-							placeholder="Cerca o inizia una nuova chat"
-                            />
+                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat" />
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-					</div>
+                    </div>
                     <!-- search profile bar -->
 
                     <!-- profile preview section  -->
                     <div class="profile-scroll">
                         <div class="profile-preview">
-                            <div class="row mouse-pointer" v-for="(profile, index) in profiles" :key="index" @click="selectedProfile(index)">
-                                <div>
-                                    <ul class="profile-description">
-                                        <li>
-                                            <img  :src="profile.profilePhoto" alt="">
+                            <div class="mouse-pointer" v-for="(profile, index) in profiles"
+                                @click="selectedProfile(index)">
+                                    <ul>
+                                        <li class="profile-description">
+                                            <img :src="profile.profilePhoto" alt="">
                                             <div>
                                                 <p class="profile-name">{{profile.name}}</p>
-                                                <p class="last-access">{{profile.messages[profile.messages.length - 1].message}}</p>
+                                                <p class="last-access">{{profile.messages[profile.messages.length -
+                                                    1].message}}</p>
                                             </div>
                                             <span class="message-arrive-hour">{{profile.lastSeen}}</span>
-                                            
+
                                         </li>
                                     </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -82,17 +78,17 @@
                 </div>
             </div>
             <!-- side bar end  -->
-            
+
             <div>
                 <!-- name profile choosed -->
                 <div class="chat-header">
                     <div class="row">
-                        <div class="row" >
+                        <div class="row">
                             <div>
                                 <img :src="profiles[currentIndex].profilePhoto" alt="">
                             </div>
                             <div>
-                                <p class="profile-name">{{ profiles[currentIndex].name }}</p>
+                                <p class="profile-name">{{profiles[currentIndex].name }}</p>
                                 <p class="last-access">Ultimo accesso oggi alle {{profiles[currentIndex].lastSeen}}</p>
                             </div>
                         </div>
@@ -106,39 +102,16 @@
                 <!-- name profile choosed end-->
                 <!-- chat message sent and arrived section  -->
                 <div class="message-section">
-                    <div class="message-sent-section">
-                        <div class="message-sent bg-green">
-                            <div class="row">
-                                <div class="col-11">
-                                    <p>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque reprehenderit ad fuga tempore
-                                        dolorem consequuntur labore culpa hic porro nam, minima impedit, ut nemo, ex sapiente nobis expedita
-                                        enim amet!
-                                    </p>
-                                </div>
-                                <div class="col-1">
+                    <div class="message-chat">
+                        <ul class="chat">
+                            <li v-for="currentMessage in profiles[currentIndex].messages" :class="currentMessage.status"
+                                class="row space-between">
+                                {{ currentMessage.message }}
+                                <span class=" hour-text lightgray column">
                                     <i class="fa-solid fa-chevron-down lightgray"></i>
-                                    <p class="hour-text lightgray">16:13</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="message-arrive-section">
-                        <div class="message-arrive bg-white">
-                            <div class="row">
-                                <div class="col-11">
-                                    <p>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque reprehenderit ad fuga tempore
-                                        dolorem consequuntur labore culpa hic porro nam, minima impedit, ut nemo, ex sapiente nobis expedita
-                                        enim amet!
-                                    </p>
-                                </div>
-                                <div class="col-1">
-                                    <i class="fa-solid fa-chevron-down lightgray"></i>
-                                    <p class="hour-text lightgray">16:13</p>
-                                </div>
-                            </div>
-                        </div>
+                                    {{ currentMessage.date.slice(11,16) }}
+                                </span>
+                            </li>
                     </div>
                 </div>
                 <!-- chat message sent and arrived section  end-->
@@ -150,11 +123,7 @@
                         </div>
                         <div class="write-message-bar">
                             <div class="write-text">
-                                <input
-                                type="text"
-                                name="search"
-                                placeholder="Scrivi un messaggio"
-                                />
+                                <input type="text" name="search" placeholder="Scrivi un messaggio" />
                             </div>
                         </div>
                         <div class="icon-write-message-section">
@@ -168,7 +137,7 @@
     </main>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/app.js"></script>
-        
+
 
 
 
