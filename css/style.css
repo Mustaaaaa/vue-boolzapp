@@ -23,9 +23,13 @@ img{
     flex-direction: row;
     width: 100%;
 }
+.mouse-pointer{
+    cursor: pointer;
+}
 .column{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 .chat-header{
     height: 70px;
@@ -49,17 +53,23 @@ img{
     font-weight: 600; 
     font-size: 15px;
 }
-.last-access{
+.last-message{
     color: #808789;
     font-size: 13px;
 }
+.last-access{
+    display: block;
+}
 .message-section{
     background-image: url(../img/mine.jpg);
-    max-width: calc(100% - 15px);
+    max-width: calc(100%);
     height: calc(100vh - 140px);
     padding: 20px;
 }
-
+.name-and-message-arrive-hour{
+    display: flex;
+    justify-content: space-between;
+}
 .message-section .col-1{
     display: flex;
     flex-direction: column;
@@ -149,6 +159,7 @@ hr{
 .profile-description{
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
     padding: 10px;

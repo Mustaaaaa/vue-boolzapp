@@ -9,12 +9,12 @@
     <script src="https://kit.fontawesome.com/7a5b1f1af0.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;4 round-border00;700&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body>
-    <main>
-        <div id="app" class="row main-content">
+    
+    <main id="app">
+        <div class="row main-content">
             <!-- side bar-->
             <div class="side-bar bg-white">
                 <div class="column">
@@ -61,137 +61,19 @@
                     <!-- profile preview section  -->
                     <div class="profile-scroll">
                         <div class="profile-preview">
-                            <div class="row">
-                                <div class=" profile-photo">
-                                    <img src="./img/avatar_1.jpg" alt="">
-                                </div>
-                                <div class="row">
-                                    <div class="profile-description">
-                                        <div>
-                                            <p class="profile-name">Michele</p>
-                                            <p class="last-access">Lorem ipsum dolor sit amet</p>
-                                        </div>
-                                            <span class="last-access message-arrive-hour">16:15</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="profile-preview">
-                            <div class="row">
-                                <div class=" profile-photo">
-                                    <img src="./img/avatar_2.jpg" alt="">
-                                </div>
-                                <div class="row">
-                                    <div class="profile-description">
-                                        <div>
-                                            <p class="profile-name">Fabio</p>
-                                            <p class="last-access">Lorem ipsum dolor sit amet</p>
-                                        </div>
-                                        <span class="last-access message-arrive-hour">16:05</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="profile-preview">
-                            <div class="row">
-                                <div class=" profile-photo">
-                                    <img src="./img/avatar_3.jpg" alt="">
-                                </div>
-                                <div class="row">
-                                    <div class="profile-description">
-                                        <div>
-                                            <p class="profile-name">Samuele</p>
-                                            <p class="last-access">Lorem ipsum dolor sit amet</p>
-                                        </div>
-                                        <span class="last-access message-arrive-hour">16:03</span> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="profile-preview">
-                            <div class="row">
-                                <div class=" profile-photo">
-                                    <img src="./img/avatar_4.jpg" alt="">
-                                </div>
-                                <div class="row">
-                                    <div class="profile-description">
-                                        <div class="">
-                                            <p class="profile-name">Alessandro B.</p>
-                                            <p class="last-access">Lorem ipsum dolor sit amet</p>
-                                        </div>
-                                        <span class="last-access message-arrive-hour">15:50</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="profile-preview">
-                            <div class="row">
-                                <div class=" profile-photo">
-                                    <img src="./img/avatar_5.jpg" alt="">
-                                </div>
-                                <div class="row">
-                                    <div class="profile-description">
-                                        <div class="">
-                                            <p class="profile-name">Alessandro L.</p>
-                                            <p class="last-access">Lorem ipsum dolor sit amet</p>
-                                        </div>
-                                        <span class="last-access message-arrive-hour">15:45</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="profile-preview">
-                            <div class="row">
-                                <div class=" profile-photo">
-                                    <img src="./img/avatar_6.jpg" alt="">
-                                </div>
-                                <div class="row">
-                                    <div class="profile-description">
-                                        <div class="">
-                                            <p class="profile-name">Claudia</p>
-                                            <p class="last-access">Lorem ipsum dolor sit amet</p>
-                                        </div>
-                                        <span class="last-access message-arrive-hour">15:40</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="profile-preview">
-                            <div class="row">
-                                <div class=" profile-photo">
-                                    <img src="./img/avatar_7.jpg" alt="">
-                                </div>
-                                <div class="row">
-                                    <div class="profile-description">
-                                        <div>
-                                            <p class="profile-name">Federico</p>
-                                            <p class="last-access">Lorem ipsum dolor sit amet</p>
-                                        </div>
-                                        <span class="last-access message-arrive-hour">15:22</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr> 
-                        <div class="profile-preview">
-                            <div class="row">
-                                <div class=" profile-photo">
-                                    <img src="./img/avatar_8.jpg" alt="">
-                                </div>
-                                <div class="row">
-                                    <div class="profile-description">
-                                        <div>
-                                            <p class="profile-name">Davide</p>
-                                            <p class="last-access">Lorem ipsum dolor sit amet</p>
-                                        </div>
-                                        <span class="last-access message-arrive-hour">15:15</span>
-                                    </div>
+                            <div class="row mouse-pointer" v-for="(profile, index) in profiles" :key="index" @click="selectedProfile(index)">
+                                <div>
+                                    <ul class="profile-description">
+                                        <li>
+                                            <img  :src="profile.profilePhoto" alt="">
+                                            <div>
+                                                <p class="profile-name">{{profile.name}}</p>
+                                                <p class="last-access">{{profile.lastMessage}}</p>
+                                            </div>
+                                            <span class="message-arrive-hour">{{profile.messageArriveHour}}</span>
+                                            
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -205,13 +87,13 @@
                 <!-- name profile choosed -->
                 <div class="chat-header">
                     <div class="row">
-                        <div class="row">
+                        <div class="row" >
                             <div>
-                                <img class="avatar-michele" src="./img/avatar_1.jpg" alt="">
+                                <img :src="profiles[currentIndex].profilePhoto" alt="">
                             </div>
                             <div>
-                                <p class="profile-name">Michele</p>
-                                <p class="last-access">Ultimo accesso oggi alle 16:26</p>
+                                <p class="profile-name">{{ profiles[currentIndex].name }}</p>
+                                <p class="last-access">Ultimo accesso oggi alle {{profiles[currentIndex].lastSeen}}</p>
                             </div>
                         </div>
                         <div class="icon-header">
@@ -284,7 +166,12 @@
             </div>
         </div>
     </main>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/app.js"></script>
         
+
+
+
 </body>
-    
+
 </html>
