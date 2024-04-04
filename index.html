@@ -68,9 +68,9 @@
                                             <img  :src="profile.profilePhoto" alt="">
                                             <div>
                                                 <p class="profile-name">{{profile.name}}</p>
-                                                <p class="last-access">{{profile.lastMessage}}</p>
+                                                <p class="last-access">{{profile.messages[profile.messages.length - 1].message}}</p>
                                             </div>
-                                            <span class="message-arrive-hour">{{profile.messageArriveHour}}</span>
+                                            <span class="message-arrive-hour">{{profile.lastSeen}}</span>
                                             
                                         </li>
                                     </ul>
