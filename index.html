@@ -101,7 +101,7 @@
                 </div>
                 <!-- name profile choosed end-->
                 <!-- chat message sent and arrived section  -->
-                <div class="message-section">
+                <div class="message-section profile-scroll">
                     <div class="message-chat">
                         <ul class="chat">
                             <li v-for="currentMessage in profiles[currentIndex].messages" :class="currentMessage.status"
@@ -123,7 +123,7 @@
                         </div>
                         <div class="write-message-bar">
                             <div class="write-text">
-                                <input type="text" name="search" placeholder="Scrivi un messaggio" />
+                                <input @keydown.enter="addMessage" v-model.trim="newMessage" type="text" placeholder="Scrivi un messaggio" />
                             </div>
                         </div>
                         <div class="icon-write-message-section">

@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            newMessage: '',
             currentIndex:  0,
             profiles: [
                 { 
@@ -173,11 +174,24 @@ createApp({
              
         }
     },
+    
     methods: {
         selectedProfile(index) {
             this.currentIndex = index;
-        }
-    }
+        },
+        addMessage() {
+            if (this.newMessage !== '') {
+              this.profiles[this.currentIndex].messages.push({
+                message: this.newMessage,
+                date: '',
+                status: 'sent'
+              });
+              this.newMessage = '';
+            }
+          }
+        
+    },
 }).mount('#app')
 
 
+const datasa = new Date();
