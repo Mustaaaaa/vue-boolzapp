@@ -105,13 +105,19 @@
                     <div class="message-chat">
                         <ul class="chat">
                             <li v-for="currentMessage in profiles[currentIndex].messages" :class="currentMessage.status"
-                                class="row space-between">
+                                class="row space-between last-access">
                                 {{ currentMessage.message }}
-                                <span class=" hour-text lightgray column">
-                                    <i class="fa-solid fa-chevron-down lightgray"></i>
+                                <span class="hour-text lightgray column">
+                                    <i class="fa-solid fa-chevron-down lightgray mouse-pointer" @click="dropDownMenu(currentMessage)"></i>
                                     {{ currentMessage.date.slice(11,16) }}
                                 </span>
                             </li>
+                            <div v-if="showDropdown" class="dropdown-menu mouse-pointer">
+                                <ul>
+                                    <li @click="deleteMessage(selectedMessage)" class="mouse-pointer">Delete message</li>
+                                </ul>
+                            </div>
+                        </ul>
                     </div>
                 </div>
                 <!-- chat message sent and arrived section  end-->

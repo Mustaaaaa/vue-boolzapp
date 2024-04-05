@@ -68,7 +68,6 @@ img{
     font-size: 13px;
 }
 .last-access{
-    display: block;
     word-wrap: break-word;
 }
 .message-section{
@@ -202,6 +201,21 @@ hr{
 }
 .side-bar .profile-preview .profile-description{
     align-self: flex-start;
+}
+.dropdown-menu li {
+    padding: 5px;
+    cursor: pointer;
+}
+.dropdown-menu {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    width: fit-content;
+    /* overflow: auto; */
+    float: inline;
+}
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
 }
 .profile-scroll{
     height: calc(95vh - 194px);

@@ -170,8 +170,8 @@ createApp({
                         }
                     ],
                 }
-            ]
-             
+            ],
+            showDropdown: false,
         }
     },
     
@@ -198,6 +198,14 @@ createApp({
             }, 1000);
         },
 
-        
+        dropDownMenu(message) {
+            this.selectedMessage = message;
+            this.showDropdown = !this.showDropdown;
+        },
+    
+        deleteMessage(message) {
+            this.profiles[this.currentIndex].messages = this.profiles[this.currentIndex].messages.filter(messageD => messageD !== message);
+            this.showDropdown = false;
+        },
     },
 }).mount('#app')
