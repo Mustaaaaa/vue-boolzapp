@@ -22,6 +22,9 @@ img{
     display: flex;
     flex-direction: row;
 }
+.flex-grow{
+    flex-grow: 1;
+}
 .space-between{
     justify-content: space-between;
 }
@@ -66,6 +69,7 @@ img{
 }
 .last-access{
     display: block;
+    word-wrap: break-word;
 }
 .message-section{
     background-image: url(../img/mine.jpg);
@@ -203,6 +207,9 @@ hr{
     height: calc(95vh - 194px);
     overflow: auto;
 }
+.chat-section{ 
+    width: 80%;
+} 
 /* display none */
 .icon-header, .icon-write-message-section, .profile-description, .side-bar,
 .side-bar .big-icon, .receive-notification, .search-bar, .write-text input:focus-visible + i {

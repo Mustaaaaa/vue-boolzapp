@@ -65,7 +65,7 @@
                                             <div>
                                                 <p class="profile-name">{{profile.name}}</p>
                                                 <p class="last-access">{{profile.messages[profile.messages.length -
-                                                    1].message}}</p>
+                                                    1].message.slice(0,30)}} ...</p>
                                             </div>
                                             <span class="message-arrive-hour">{{profile.lastSeen}}</span>
 
@@ -79,11 +79,11 @@
             </div>
             <!-- side bar end  -->
 
-            <div>
+            <div class="chat-section">
                 <!-- name profile choosed -->
                 <div class="chat-header">
                     <div class="row">
-                        <div class="row">
+                        <div class="row flex-grow">
                             <div>
                                 <img :src="profiles[currentIndex].profilePhoto" alt="">
                             </div>

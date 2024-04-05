@@ -187,11 +187,17 @@ createApp({
                 status: 'sent'
               });
               this.newMessage = '';
-            }
-          }
+            };
+            const currentProfile = this.currentIndex;
+            setTimeout(() => {
+                this.profiles[currentProfile].messages.push({
+                  message: 'Ok!',
+                  date: '',
+                  status: 'received'
+                });
+            }, 1000);
+        },
+
         
     },
 }).mount('#app')
-
-
-const datasa = new Date();
