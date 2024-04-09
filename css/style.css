@@ -211,8 +211,6 @@ hr{
     border-radius: 5px;
     padding: 5px;
     width: fit-content;
-    /* overflow: auto; */
-    float: inline;
 }
 .dropdown-menu li:hover {
     background-color: #f0f0f0;

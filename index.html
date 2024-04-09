@@ -60,7 +60,9 @@
                             <div class="mouse-pointer" v-for="(profile, index) in profiles"
                                 @click="selectedProfile(index)">
                                     <ul>
-                                        <li class="profile-description">
+                                        <li class="profile-description"
+                                        v-for="(contact, index) in contacts"
+                                        :class="contact.name.tolowercase()">
                                             <img :src="profile.profilePhoto" alt="">
                                             <div>
                                                 <p class="profile-name">{{profile.name}}</p>
